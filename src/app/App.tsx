@@ -30,23 +30,8 @@ function NavSection() {
             <div className="relative shrink-0" style={{ width: "149.866px", height: "149.864px" }}>
               <CortexaCircleMark size={150} />
             </div>
-            <div className="relative shrink-0" style={{ width: "150.123px", height: "150.123px" }}>
-              <svg viewBox="0 0 150 150" fill="none" width="150.123" height="150.123">
-                <text
-                  x="6"
-                  y="90"
-                  fill="black"
-                  style={{
-                    fontFamily: instrSans,
-                    fontSize: "28px",
-                    fontWeight: 400,
-                    letterSpacing: "-2px",
-                    fontVariationSettings: "'wdth' 100",
-                  }}
-                >
-                  Cortexa
-                </text>
-              </svg>
+            <div className="relative shrink-0" style={{ width: "150px", height: "150px" }}>
+              <FlowerMark size={150} />
             </div>
           </div>
         </div>
@@ -154,7 +139,7 @@ function ComingSoonSection() {
           style={{ borderBottom: "1px solid black" }}
         >
           <p
-            className="font-normal leading-none text-[24px] text-black tracking-[-1.2px] whitespace-nowrap mb-[60px]"
+            className="font-normal leading-[1.1] text-[64px] text-black tracking-[-3.2px] whitespace-nowrap mb-[60px]"
             style={{ fontFamily: instrSans, ...wdth100 }}
           >
             Coming soon
@@ -283,108 +268,29 @@ function StatsSection() {
   );
 }
 
-function FooterLogoMark() {
+function FlowerMark({ size = 150 }: { size?: number }) {
+  // viewBox derived from actual bounding box of all 8 petals:
+  // x: 62.05 → 121.01  (width ≈ 59)
+  // y: 0     → 58.96   (height ≈ 59)
   return (
-    <div className="inline-grid grid-cols-[max-content] grid-rows-[max-content] leading-[0] place-items-start relative shrink-0">
-      <div
-        className="col-1 row-1 overflow-clip relative"
-        style={{ width: "58.853px", height: "58.853px" }}
-      >
-        <div className="absolute" style={{ left: "0.37px", top: "-0.29px" }}>
-          <svg width="59" height="59" viewBox="0 0 59 59" fill="none">
-            <rect fill="white" width="59" height="59" />
-            <circle cx="29.5" cy="29.5001" fill="black" r="29.3399" />
-            <circle cx="37.1171" cy="29.2179" fill="white" r="14.3878" />
-            <circle cx="40.5025" cy="29.218" fill="black" r="7.61708" />
-            <rect fill="white" width="10.0189" height="5.56604" x="48.9811" y="26.7169" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 relative"
-        style={{ width: "16.738px", height: "16.738px", marginLeft: "83.2px", marginTop: "42.22px" }}
-      >
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.738 16.738" fill="none">
-          <circle cx="8.369" cy="8.369" fill="black" r="8.369" />
-        </svg>
-      </div>
-
-      <div
-        className="col-1 row-1 relative"
-        style={{ height: "16.738px", marginLeft: "83.09px", marginTop: "0", width: "16.886px" }}
-      >
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.8861 16.738" fill="none">
-          <ellipse cx="8.44306" cy="8.369" fill="black" rx="8.44306" ry="8.369" />
-        </svg>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ width: "16.738px", height: "16.738px", marginLeft: "104.27px", marginTop: "21.06px" }}
-      >
-        <div className="-rotate-90 flex-none relative" style={{ width: "16.738px", height: "16.738px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.738 16.738" fill="none">
-            <circle cx="8.369" cy="8.369" fill="black" r="8.369" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ height: "16.886px", marginLeft: "62.05px", marginTop: "21.04px", width: "16.738px" }}
-      >
-        <div className="-rotate-90 flex-none" style={{ height: "16.738px", width: "16.886px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.8861 16.738" fill="none">
-            <ellipse cx="8.44306" cy="8.369" fill="black" rx="8.44306" ry="8.369" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ width: "23.671px", height: "23.671px", marginLeft: "94.58px", marginTop: "2.68px" }}
-      >
-        <div className="-rotate-[135deg] flex-none relative" style={{ width: "16.738px", height: "16.738px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.738 16.738" fill="none">
-            <circle cx="8.369" cy="8.369" fill="black" r="8.369" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ width: "23.776px", height: "23.776px", marginLeft: "64.71px", marginTop: "32.51px" }}
-      >
-        <div className="-rotate-[135deg] flex-none" style={{ height: "16.738px", width: "16.886px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.8861 16.738" fill="none">
-            <ellipse cx="8.44306" cy="8.369" fill="black" rx="8.44306" ry="8.369" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ width: "23.671px", height: "23.671px", marginLeft: "94.62px", marginTop: "32.59px" }}
-      >
-        <div className="-rotate-45 flex-none relative" style={{ width: "16.738px", height: "16.738px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.738 16.738" fill="none">
-            <circle cx="8.369" cy="8.369" fill="black" r="8.369" />
-          </svg>
-        </div>
-      </div>
-
-      <div
-        className="col-1 row-1 flex items-center justify-center relative"
-        style={{ width: "23.776px", height: "23.776px", marginLeft: "64.68px", marginTop: "2.72px" }}
-      >
-        <div className="-rotate-45 flex-none" style={{ height: "16.738px", width: "16.886px" }}>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 16.8861 16.738" fill="none">
-            <ellipse cx="8.44306" cy="8.369" fill="black" rx="8.44306" ry="8.369" />
-          </svg>
-        </div>
-      </div>
-    </div>
+    <svg width={size} height={size} viewBox="62 0 59 59" fill="none">
+      {/* bottom — circle */}
+      <circle cx="91.569" cy="50.589" r="8.369" fill="black" />
+      {/* top — ellipse (wider horizontally) */}
+      <ellipse cx="91.533" cy="8.369" rx="8.443" ry="8.369" fill="black" />
+      {/* right — circle */}
+      <circle cx="112.639" cy="29.429" r="8.369" fill="black" />
+      {/* left — ellipse rotated -90° (taller vertically) */}
+      <ellipse cx="70.419" cy="29.483" rx="8.369" ry="8.443" fill="black" />
+      {/* top-right — circle */}
+      <circle cx="106.416" cy="14.516" r="8.369" fill="black" />
+      {/* bottom-left — ellipse rotated -135° */}
+      <ellipse cx="76.598" cy="44.398" rx="8.443" ry="8.369" fill="black" transform="rotate(-135 76.598 44.398)" />
+      {/* bottom-right — circle */}
+      <circle cx="106.456" cy="44.426" r="8.369" fill="black" />
+      {/* top-left — ellipse rotated -45° */}
+      <ellipse cx="76.568" cy="14.608" rx="8.443" ry="8.369" fill="black" transform="rotate(-45 76.568 14.608)" />
+    </svg>
   );
 }
 
@@ -394,7 +300,10 @@ function FooterSection() {
       <div className="flex flex-col gap-[127px] items-start max-w-[inherit] pb-[15px] pt-[30px] px-[15px]">
         <div className="flex items-start w-full">
           <div className="flex flex-1 flex-col items-start max-w-[625px] min-w-0">
-            <FooterLogoMark />
+            <div className="flex flex-row items-center gap-[3px]">
+              <CortexaCircleMark size={59} />
+              <FlowerMark size={59} />
+            </div>
           </div>
 
           <div
@@ -438,7 +347,7 @@ function FooterSection() {
               <div className="flex flex-col gap-[10px] items-start w-full whitespace-nowrap">
                 {/* Replace # with your Instagram URL */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/neurobridge.founders/"
                   className="leading-none text-[20px] text-black underline [text-underline-position:from-font] decoration-solid"
                   style={{ fontFamily: instrSans, ...wdth100 }}
                   target="_blank"
@@ -448,7 +357,7 @@ function FooterSection() {
                 </a>
                 {/* Replace # with your X (Twitter) URL */}
                 <a
-                  href="#"
+                  href="https://x.com/neurobridge_"
                   className="leading-none text-[20px] text-black underline [text-underline-position:from-font] decoration-solid"
                   style={{ fontFamily: instrSans, ...wdth100 }}
                   target="_blank"
@@ -458,7 +367,7 @@ function FooterSection() {
                 </a>
                 {/* Replace # with your LinkedIn URL */}
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/111547089/admin/dashboard/"
                   className="leading-none text-[20px] text-black underline [text-underline-position:from-font] decoration-solid"
                   style={{ fontFamily: instrSans, ...wdth100 }}
                   target="_blank"
