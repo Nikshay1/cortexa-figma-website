@@ -41,9 +41,10 @@ function NavSection() {
                     fontSize: "28px",
                     fontWeight: 400,
                     letterSpacing: "-2px",
+                    fontVariationSettings: "'wdth' 100",
                   }}
                 >
-                  CORTEXA
+                  Cortexa
                 </text>
               </svg>
             </div>

@@ -425,7 +425,7 @@ function SocialLinks() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full whitespace-nowrap" data-name="Social links">
       <a className="block leading-[0] relative shrink-0 text-[0px]" href="https://www.instagram.com/figma" style={{ fontVariationSettings: "'wdth' 100" }} target="_blank">
-        <p className="[text-underline-position:from-font] cursor-pointer decoration-from-font decoration-solid leading-none text-[20px] underline" role="link" style={{ fontVariationSettings: "'wdth' 100" }} tabIndex="0">
+        <p className="[text-underline-position:from-font] cursor-pointer decoration-from-font decoration-solid leading-none text-[20px] underline" role="link" style={{ fontVariationSettings: "'wdth' 100" }} tabIndex={0}>
           Instagram
         </p>
       </a>
@@ -433,7 +433,7 @@ function SocialLinks() {
         X
       </a>
       <a className="block leading-[0] relative shrink-0 text-[0px]" href="http://linkedin.com/company/figma" style={{ fontVariationSettings: "'wdth' 100" }} target="_blank">
-        <p className="[text-underline-position:from-font] cursor-pointer decoration-from-font decoration-solid leading-none text-[20px] underline" role="link" style={{ fontVariationSettings: "'wdth' 100" }} tabIndex="0">
+        <p className="[text-underline-position:from-font] cursor-pointer decoration-from-font decoration-solid leading-none text-[20px] underline" role="link" style={{ fontVariationSettings: "'wdth' 100" }} tabIndex={0}>
           LinkedIn
         </p>
       </a>
