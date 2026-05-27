@@ -115,6 +115,14 @@ function IntroSection() {
                 intelligence.
               </span>
             </p>
+            <p>
+              <span
+                className="italic leading-[1.1] text-[27px] text-black tracking-[-1.35px]"
+                style={{ fontFamily: arapeyItalic }}
+              >
+                For people having Motor Neuron Diseases.
+              </span>
+            </p>
           </div>
         </div>
       </div>
