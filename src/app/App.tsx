@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { supabase } from "../supabaseClient";
 
 const instrSans = "'Instrument Sans', sans-serif";
 const arapeyItalic = "'Arapey', serif";
@@ -133,10 +134,24 @@ function IntroSection() {
 function ComingSoonSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) setSubmitted(true);
+    if (email.trim()) {
+      setLoading(true);
+      const { error } = await supabase
+        .from("waitlist")
+        .insert([{ email: email.trim() }]);
+      
+      setLoading(false);
+      
+      if (!error || error.code === "23505") {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    }
   };
 
   return (
@@ -184,10 +199,11 @@ function ComingSoonSection() {
                   </div>
                   <button
                     type="submit"
-                    className="font-medium text-[16px] tracking-[-0.48px] flex items-center gap-[3px] self-start bg-transparent border-none p-0 cursor-pointer"
+                    disabled={loading}
+                    className="font-medium text-[16px] tracking-[-0.48px] flex items-center gap-[3px] self-start bg-transparent border-none p-0 cursor-pointer disabled:opacity-50"
                     style={{ fontFamily: instrSans, ...wdth100, color: "#767676" }}
                   >
-                    <span>Join our waitlist</span>
+                    <span>{loading ? "Joining..." : "Join our waitlist"}</span>
                     <span>→</span>
                   </button>
                 </form>
