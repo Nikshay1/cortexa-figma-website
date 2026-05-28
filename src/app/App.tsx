@@ -42,6 +42,20 @@ function NavSection() {
 }
 
 function NavHeader() {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navHeight = 46; // fixed navbar height in px
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  const navLinks: { label: string; action: () => void }[] = [
+    { label: "Waitlist", action: () => scrollTo("intro-end") },
+    { label: "About", action: () => {} },
+    { label: "Contact", action: () => scrollTo("contact") },
+  ];
+
   return (
     <div className="fixed bg-white flex items-center justify-between left-0 right-0 top-0 z-50 px-[15px]">
       <div
@@ -59,15 +73,15 @@ function NavHeader() {
         <div className="relative bg-white flex-1 h-full" style={{ borderBottom: "1px solid black" }}>
           <div className="flex items-end justify-end h-full">
             <div className="flex gap-[50px] items-end pb-[10px] pl-[20px] pt-[12px]">
-              {["Work", "About", "Contact"].map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="pb-[4px] font-normal leading-none text-[20px] text-black tracking-[-1px] whitespace-nowrap no-underline"
+              {navLinks.map(({ label, action }) => (
+                <button
+                  key={label}
+                  onClick={action}
+                  className="pb-[4px] font-normal leading-none text-[20px] text-black tracking-[-1px] whitespace-nowrap no-underline bg-transparent border-none p-0 cursor-pointer"
                   style={{ fontFamily: instrSans, ...wdth100 }}
                 >
-                  {link}
-                </a>
+                  {label}
+                </button>
               ))}
             </div>
           </div>
@@ -127,6 +141,7 @@ function IntroSection() {
           </div>
         </div>
       </div>
+      <div id="intro-end" />
     </div>
   );
 }
@@ -155,7 +170,7 @@ function ComingSoonSection() {
   };
 
   return (
-    <div className="max-w-[1920px] relative shrink-0 w-full">
+    <div id="waitlist" className="max-w-[1920px] relative shrink-0 w-full">
       <div className="flex flex-col items-start max-w-[inherit] px-[15px] py-[20px]">
         <div
           className="flex flex-col items-start relative shrink-0 w-full pb-[80px]"
@@ -320,7 +335,7 @@ function FlowerMark({ size = 150 }: { size?: number }) {
 
 function FooterSection() {
   return (
-    <div className="max-w-[1920px] relative shrink-0 w-full">
+    <div id="contact" className="max-w-[1920px] relative shrink-0 w-full">
       <div className="flex flex-col gap-[127px] items-start max-w-[inherit] pb-[15px] pt-[30px] px-[15px]">
         <div className="flex items-start w-full">
           <div className="flex flex-1 flex-col items-start max-w-[625px] min-w-0">
