@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <mask id="m">
+      <!-- Outer circle: visible -->
+      <circle cx="32" cy="32" r="31.75" fill="white"/>
+      <!-- Middle circle: transparent hole -->
+      <circle cx="40.32" cy="31.68" r="15.68" fill="black"/>
+      <!-- Inner circle: visible again -->
+      <circle cx="44.16" cy="31.68" r="8.3" fill="white"/>
+      <!-- Cutting slit: transparent hole -->
+      <rect x="53.44" y="29.06" width="10.56" height="6.06" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Black logo, transparent background -->
+  <circle cx="32" cy="32" r="31.75" fill="black" mask="url(#m)"/>
+</svg>

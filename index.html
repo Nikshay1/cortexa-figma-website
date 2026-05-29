@@ -8,6 +8,19 @@
       <title>Cortexa</title>
       <meta name="description" content="This web application showcases a sleek design with a waitlist feature, allowing users to join upcoming product launches while maintaining brand aesthetics." />
       <meta name="robots" content="noindex, nofollow" />
+      <link id="favicon" rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
+      <script>
+        (function () {
+          var mq = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyFavicon(isDark) {
+            document.getElementById('favicon').href = isDark
+              ? '/favicon-dark.svg'
+              : '/favicon-light.svg';
+          }
+          applyFavicon(mq.matches);
+          mq.addEventListener('change', function (e) { applyFavicon(e.matches); });
+        })();
+      </script>
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
       
     </head>

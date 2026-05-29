@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!--
+      Mask defines the logo's shape with real transparency:
+      white = visible, black = transparent hole
+    -->
+    <mask id="logo-mask">
+      <!-- Outer circle: visible -->
+      <circle cx="32" cy="32" r="31.75" fill="white"/>
+      <!-- Middle circle: punch out (transparent hole) -->
+      <circle cx="40.32" cy="31.68" r="15.68" fill="black"/>
+      <!-- Inner circle: add back (visible) -->
+      <circle cx="44.16" cy="31.68" r="8.3" fill="white"/>
+      <!-- Cutting rectangle: punch out (transparent hole) -->
+      <rect x="53.44" y="29.06" width="10.56" height="6.06" fill="black"/>
+    </mask>
+  </defs>
+
+  <style>
+    /* Light mode: black logo, transparent background */
+    .logo { fill: black; }
+
+    /* Dark mode: white logo, transparent background */
+    @media (prefers-color-scheme: dark) {
+      .logo { fill: white; }
+    }
+  </style>
+
+  <!--
+    Single circle with the mask applied.
+    Fill colour switches via CSS; holes are truly transparent.
+  -->
+  <circle class="logo" cx="32" cy="32" r="31.75" mask="url(#logo-mask)"/>
+</svg>
